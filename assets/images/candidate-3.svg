@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <clipPath id="circleClip3">
+      <circle cx="60" cy="60" r="56"/>
+    </clipPath>
+    <linearGradient id="bgGrad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0e7ff"/>
+      <stop offset="100%" stop-color="#c7d2fe"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bgGrad3)" stroke="#6366f1" stroke-width="3"/>
+  <g clip-path="url(#circleClip3)">
+    <!-- Shoulders -->
+    <path d="M18 120 C18 88 38 84 60 84 C82 84 102 88 102 120 Z" fill="#312e81"/>
+    <path d="M50 84 L60 98 L70 84 Z" fill="#38bdf8"/>
+    <!-- Head -->
+    <circle cx="60" cy="50" r="22" fill="#fcd34d"/>
+    <!-- Hair -->
+    <path d="M38 42 C38 24 50 18 60 18 C70 18 82 24 82 42 C76 30 72 26 60 26 C48 26 44 30 38 42 Z" fill="#0f172a"/>
+    <!-- Eyes -->
+    <ellipse cx="50" cy="48" rx="2.5" ry="2" fill="#0f172a"/>
+    <ellipse cx="70" cy="48" rx="2.5" ry="2" fill="#0f172a"/>
+    <!-- Smile -->
+    <path d="M52 61 Q60 67 68 61" fill="none" stroke="#78350f" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

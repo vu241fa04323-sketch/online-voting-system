@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — VoteSecure</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="auth-page">
+
+  <!-- Header -->
+  <header class="auth-header">
+    <a href="../index.html" class="brand-link">
+      <img src="../assets/images/logo.svg" alt="VoteSecure Logo" style="height: 36px;">
+    </a>
+    <a href="../index.html" class="btn btn-secondary btn-sm">
+      &larr; Back to Home
+    </a>
+  </header>
+
+  <!-- Login Card Container -->
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <span class="auth-badge auth-badge-admin">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"/>
+          </svg>
+          Administrative Console
+        </span>
+        <h1 class="auth-title">Admin Login</h1>
+        <p class="auth-subtitle">Sign in to manage elections, posts, candidates, and voters.</p>
+      </div>
+
+      <div class="auth-card-body">
+        <!-- Demo Credentials Box -->
+        <div class="demo-credentials-box">
+          <div class="demo-credentials-header">
+            <span class="demo-tag">
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+              Demo Credentials
+            </span>
+            <button type="button" class="demo-autofill-btn" id="autofill-admin-btn">
+              Auto-fill &rarr;
+            </button>
+          </div>
+          <div class="demo-credentials-list">
+            <div>Admin Username: <strong>admin</strong></div>
+            <div>Admin Password: <strong>Admin@123</strong></div>
+          </div>
+        </div>
+
+        <!-- Login Form -->
+        <form id="admin-login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="admin-username">Admin Username <span class="required">*</span></label>
+            <input type="text" id="admin-username" class="form-control" placeholder="Enter Admin Username" required autocomplete="username">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="admin-password">Admin Password <span class="required">*</span></label>
+            <div class="password-input-group">
+              <input type="password" id="admin-password" class="form-control" placeholder="Enter Admin Password" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" id="toggle-admin-pass" aria-label="Toggle password visibility">
+                👁
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 1.5rem;">
+            Login
+          </button>
+        </form>
+      </div>
+
+      <div class="auth-card-footer">
+        Are you a student voter? <a href="voter-login.html" class="font-semibold">Switch to Voter Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // If already logged in as admin, redirect
+      const user = Auth.getCurrentUser();
+      if (user && user.role === 'admin') {
+        window.location.href = 'admin-dashboard.html';
+        return;
+      }
+
+      const form = document.getElementById('admin-login-form');
+      const usernameInput = document.getElementById('admin-username');
+      const passwordInput = document.getElementById('admin-password');
+      const autofillBtn = document.getElementById('autofill-admin-btn');
+      const togglePassBtn = document.getElementById('toggle-admin-pass');
+
+      // Autofill helper
+      if (autofillBtn) {
+        autofillBtn.addEventListener('click', () => {
+          usernameInput.value = 'admin';
+          passwordInput.value = 'Admin@123';
+          Utils.showToast('Demo admin credentials filled.', 'info');
+        });
+      }
+
+      // Password toggle
+      if (togglePassBtn) {
+        togglePassBtn.addEventListener('click', () => {
+          const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordInput.setAttribute('type', type);
+          togglePassBtn.textContent = type === 'password' ? '👁' : '🙈';
+        });
+      }
+
+      // Handle Submit
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+
+        if (!username) {
+          Utils.showToast('Please enter your Admin Username.', 'error');
+          usernameInput.focus();
+          return;
+        }
+
+        if (!password) {
+          Utils.showToast('Please enter your Admin Password.', 'error');
+          passwordInput.focus();
+          return;
+        }
+
+        const result = Auth.loginAdmin(username, password);
+        if (result.success) {
+          Utils.showToast(`Welcome back, ${result.user.name}!`, 'success');
+          setTimeout(() => {
+            window.location.href = 'admin-dashboard.html';
+          }, 600);
+        } else {
+          Utils.showToast(result.message, 'error');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Profile &amp; Audit — VoteSecure</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar (Section 27 Voter Navigation) -->
+    <aside class="sidebar" aria-label="Voter Navigation">
+      <div class="sidebar-header">
+        <a href="voter-dashboard.html" class="sidebar-brand">
+          <img src="../assets/images/logo.svg" alt="VoteSecure Logo" style="height: 32px; filter: brightness(0) invert(1);">
+        </a>
+        <span class="sidebar-role-badge" style="background-color: var(--accent); color: var(--white);">Voter</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-heading">Navigation</div>
+        <a href="voter-dashboard.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="voting.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          <span>Active Election</span>
+        </a>
+        <a href="#history" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+          <span>My Voting Status</span>
+        </a>
+        <a href="profile.html" class="nav-item active">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="user-avatar" id="profile-avatar-initials" style="background-color: var(--accent);">VT</div>
+          <div class="user-info">
+            <div class="user-info-name user-display-name">Student Voter</div>
+            <div class="user-info-sub user-display-id">VOTER001</div>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-danger" data-action="logout" title="Sign Out" style="padding: 0.25rem 0.5rem;">
+            ⏻
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+          </button>
+          <h1 class="topbar-title">Voter Profile &amp; Audit Trail</h1>
+        </div>
+        <div class="topbar-right">
+          <span class="badge badge-success" id="profile-status-badge">
+            <span class="badge-dot"></span> Active Voter Account
+          </span>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Identity Summary Banner -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-body">
+            <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+              <img src="../assets/images/default-avatar.svg" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--slate-200); background: #f8fafc;" alt="Avatar">
+              <div>
+                <h2 style="font-size: 1.5rem; color: var(--slate-900); margin-bottom: 0.25rem;" id="profile-name">
+                  Loading...
+                </h2>
+                <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                  <span style="font-family: var(--font-mono); font-weight: 700; color: var(--primary); font-size: 1.05rem;" id="profile-id">
+                    VOTER000
+                  </span>
+                  <span style="color: var(--slate-400);">&bull;</span>
+                  <span style="font-size: 0.9rem; color: var(--slate-600);" id="profile-dept">Department</span>
+                  <span style="color: var(--slate-400);">&bull;</span>
+                  <span style="font-size: 0.85rem; color: var(--slate-500);">Created: <span id="profile-created-date">--</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Details Grid: Personal & Academic (Section 3) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          
+          <!-- Personal Information Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Personal Information</h3>
+              <span class="badge badge-primary">Institutional Record</span>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td style="width: 35%; color: var(--slate-500); font-weight: 600;">Date of Birth</td>
+                    <td id="profile-dob" style="font-weight: 600; color: var(--slate-800);">-</td>
+                  </tr>
+                  <tr>
+                    <td style="color: var(--slate-500); font-weight: 600;">Gender</td>
+                    <td id="profile-gender" style="font-weight: 600; color: var(--slate-800);">-</td>
+                  </tr>
+                  <tr>
+                    <td style="color: var(--slate-500); font-weight: 600;">Email Address</td>
+                    <td id="profile-email" style="font-weight: 600; color: var(--slate-800);">-</td>
+                  </tr>
+                  <tr>
+                    <td style="color: var(--slate-500); font-weight: 600;">Phone Number</td>
+                    <td id="profile-phone" style="font-weight: 600; color: var(--slate-800);">-</td>
+                  </tr>
+                  <tr>
+                    <td style="color: var(--slate-500); font-weight: 600;">Permanent Address</td>
+                    <td id="profile-address" style="color: var(--slate-700); font-size: 0.9rem;">-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Academic / Organization Information Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Academic &amp; Institutional Profile</h3>
+              <span class="badge badge-neutral">Campus Data</span>
+            </div>
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td style="width: 40%; color: var(--slate-500); font-weight: 600;">Student / Emp ID</td>
+                    <td id="profile-student-id" style="font-weight: 700; font-family: var(--font-mono); color: var(--primary);">-</td>
+                  </tr>
+                  <tr>
+                    <td style="color: var(--slate-500); font-weight: 600;">Department / School</td>
+                    <td id="profile-dept" style="font-weight: 600; color: var(--slate-800);">-</td>
+                  </tr>
+                  <tr>
+                    <td style="color: var(--slate-500); font-weight: 600;">Class / Academic Year</td>
+                    <td id="profile-year" style="font-weight: 600; color: var(--slate-800);">-</td>
+                  </tr>
+                  <tr>
+                    <td style="color: var(--slate-500); font-weight: 600;">Section / Batch</td>
+                    <td id="profile-section" style="font-weight: 600; color: var(--slate-800);">-</td>
+                  </tr>
+                  <tr>
+                    <td style="color: var(--slate-500); font-weight: 600;">Authority Note</td>
+                    <td style="font-size: 0.85rem; color: var(--slate-600);">
+                      All records are officially managed by the Institutional Election Administrator.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ballot Participation History Card (Section 27 & 21) -->
+        <div class="card" id="history">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Ballot Participation Audit History</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-500); margin: 0;">Verified ledger of all ballots cast under this voter ID</p>
+            </div>
+            <span class="badge badge-success">Tamper-Proof Ledger</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Election Title</th>
+                  <th>Confirmation Code</th>
+                  <th>Date &amp; Time</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="profile-voting-history-body">
+                <!-- Dynamically populated by js/profile.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/profile.js"></script>
+</body>
+</html>

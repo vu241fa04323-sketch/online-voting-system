@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Settings — VoteSecure</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Admin Navigation">
+      <div class="sidebar-header">
+        <a href="admin-dashboard.html" class="sidebar-brand">
+          <img src="../assets/images/logo.svg" alt="VoteSecure Logo" style="height: 32px; filter: brightness(0) invert(1);">
+        </a>
+        <span class="sidebar-role-badge">Admin</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-heading">Navigation</div>
+        <a href="admin-dashboard.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="elections.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+          <span>Elections</span>
+        </a>
+        <a href="posts.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+          <span>Posts</span>
+        </a>
+        <a href="voters.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+          <span>Voters</span>
+        </a>
+        <a href="candidates.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+          <span>Candidates</span>
+        </a>
+
+        <div class="sidebar-heading">Analytics &amp; Tools</div>
+        <a href="results.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+          <span>Results</span>
+        </a>
+        <a href="reports.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+          <span>Reports</span>
+        </a>
+        <a href="settings.html" class="nav-item active">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="user-avatar">AD</div>
+          <div class="user-info">
+            <div class="user-info-name user-display-name">Administrator</div>
+            <div class="user-info-sub">System Root</div>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-danger" data-action="logout" title="Sign Out" style="padding: 0.25rem 0.5rem;">
+            ⏻
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+          </button>
+          <h1 class="topbar-title">System Settings &amp; Configuration</h1>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Settings Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          
+          <!-- Admin Profile Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Administrator Profile</h3>
+              <span class="badge badge-primary">Account</span>
+            </div>
+            <div class="card-body">
+              <form id="form-admin-profile">
+                <div class="form-group">
+                  <label class="form-label" for="admin-username">Admin Username</label>
+                  <input type="text" id="admin-username" class="form-control" readonly style="background: var(--slate-100); font-family: var(--font-mono); font-weight: 600;">
+                  <span class="form-hint">Username is locked to institutional root.</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="admin-name">Full Display Name <span class="required">*</span></label>
+                  <input type="text" id="admin-name" class="form-control" required placeholder="e.g. System Administrator">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="admin-email">Official Admin Email <span class="required">*</span></label>
+                  <input type="email" id="admin-email" class="form-control" required placeholder="e.g. admin@votesecure.edu">
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+                  Save Profile Changes
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Change Admin Password Card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Change Admin Password</h3>
+              <span class="badge badge-neutral">Security</span>
+            </div>
+            <div class="card-body">
+              <form id="form-admin-password">
+                <div class="form-group">
+                  <label class="form-label" for="admin-current-password">Current Password <span class="required">*</span></label>
+                  <input type="password" id="admin-current-password" class="form-control" required placeholder="Current administrator password">
+                  <span class="form-hint">Default demo password is <code>Admin@123</code></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="admin-new-password">New Password <span class="required">*</span></label>
+                  <input type="password" id="admin-new-password" class="form-control" required placeholder="Enter new strong password" minlength="6">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="admin-confirm-password">Confirm New Password <span class="required">*</span></label>
+                  <input type="password" id="admin-confirm-password" class="form-control" required placeholder="Re-enter new password" minlength="6">
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+                  Update Password
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- System & Results Visibility Card -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Election &amp; Results Access Policy</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-500); margin: 0;">Configure voter access permissions and public transparency controls</p>
+            </div>
+            <span class="badge badge-primary">Access Control</span>
+          </div>
+          <div class="card-body">
+            <form id="form-system-settings">
+              <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                  <input type="checkbox" id="setting-allow-public-results" style="width: 20px; height: 20px; margin-top: 0.2rem; cursor: pointer;">
+                  <div>
+                    <label for="setting-allow-public-results" style="font-weight: 700; color: var(--slate-900); cursor: pointer; display: block; margin-bottom: 0.25rem;">
+                      Allow Public &amp; Voter Access to Live Election Results
+                    </label>
+                    <p style="font-size: 0.85rem; color: var(--slate-600); margin: 0; line-height: 1.5;">
+                      When enabled, registered voters can access the Results page directly to inspect certified tallies and charts. 
+                      When disabled (default), only administrators can access result tallies until the election is officially concluded.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+                <div class="form-group">
+                  <label class="form-label" for="setting-inst-name">Institution / Organization Name</label>
+                  <input type="text" id="setting-inst-name" class="form-control" placeholder="e.g. National Institute of Technology">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="setting-election-year">Academic / Election Year</label>
+                  <input type="text" id="setting-election-year" class="form-control" placeholder="2026">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                Save System Configuration
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Architecture Diagnostics Card -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h3 class="card-title">Prototype Architecture Diagnostics</h3>
+            <span class="badge badge-primary">Browser LocalStorage</span>
+          </div>
+          <div class="card-body">
+            <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1.5rem; line-height: 1.6;">
+              VoteSecure operates as an educational prototype running entirely on modern browser standards (HTML5, CSS3, ES6+). 
+              All entities are persisted in your client browser's LocalStorage.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+              <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem;">
+                <div style="font-size: 0.8rem; color: var(--slate-500); text-transform: uppercase;">Storage Engine</div>
+                <div style="font-size: 1.1rem; font-weight: 700; color: var(--slate-900);">window.localStorage</div>
+              </div>
+              <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem;">
+                <div style="font-size: 0.8rem; color: var(--slate-500); text-transform: uppercase;">Current Session</div>
+                <div style="font-size: 1.1rem; font-weight: 700; color: var(--primary);" class="user-display-name">admin</div>
+              </div>
+              <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem;">
+                <div style="font-size: 0.8rem; color: var(--slate-500); text-transform: uppercase;">Build Version</div>
+                <div style="font-size: 1.1rem; font-weight: 700; color: var(--slate-900);">v1.0.0 (Clean ES6)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reset Demo Data Card -->
+        <div class="card" style="border-left: 4px solid var(--danger);">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title" style="color: var(--danger);">Development &amp; Testing Reset Control</h3>
+              <p style="font-size: 0.85rem; color: var(--slate-500); margin: 0;">Quickly wipe custom changes and restore clean demo state for presentations</p>
+            </div>
+            <span class="badge badge-danger">Danger Zone</span>
+          </div>
+
+          <div class="card-body">
+            <p style="font-size: 0.95rem; color: var(--slate-700); margin-bottom: 1.5rem; line-height: 1.6;">
+              If you have added test voters, created custom candidates, or submitted ballots and wish to reset the entire database 
+              back to the initial state (with default voters VOTER001–VOTER005, 7 presidential/VP/secretary candidates, and clean demo vote records), 
+              use the button below.
+            </p>
+
+            <button type="button" class="btn btn-danger" id="btn-reset-demo-data">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+              Reset Demo Data to Initial State
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/settings.js"></script>
+</body>
+</html>

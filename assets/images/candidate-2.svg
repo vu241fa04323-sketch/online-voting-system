@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <clipPath id="circleClip2">
+      <circle cx="60" cy="60" r="56"/>
+    </clipPath>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fef3c7"/>
+      <stop offset="100%" stop-color="#fde68a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bgGrad2)" stroke="#f59e0b" stroke-width="3"/>
+  <g clip-path="url(#circleClip2)">
+    <!-- Shoulders Male -->
+    <path d="M18 120 C18 88 38 82 60 82 C82 82 102 88 102 120 Z" fill="#047857"/>
+    <polygon points="56,82 64,82 68,110 52,110" fill="#f59e0b"/>
+    <!-- Head -->
+    <circle cx="60" cy="50" r="22" fill="#fed7aa"/>
+    <!-- Hair Male -->
+    <path d="M38 46 C38 28 44 20 60 20 C76 20 82 28 82 46 C80 34 76 28 60 28 C44 28 40 34 38 46 Z" fill="#1e293b"/>
+    <!-- Eyes -->
+    <circle cx="51" cy="48" r="2.5" fill="#1e293b"/>
+    <circle cx="69" cy="48" r="2.5" fill="#1e293b"/>
+    <!-- Smile -->
+    <path d="M52 61 Q60 67 68 61" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

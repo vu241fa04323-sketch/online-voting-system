@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <clipPath id="circleClip5">
+      <circle cx="60" cy="60" r="56"/>
+    </clipPath>
+    <linearGradient id="bgGrad5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ccfbf1"/>
+      <stop offset="100%" stop-color="#99f6e4"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bgGrad5)" stroke="#0d9488" stroke-width="3"/>
+  <g clip-path="url(#circleClip5)">
+    <path d="M18 120 C18 88 38 82 60 82 C82 82 102 88 102 120 Z" fill="#0f766e"/>
+    <circle cx="60" cy="50" r="22" fill="#d97706" opacity="0.85"/>
+    <path d="M38 46 C38 26 44 20 60 20 C76 20 82 26 82 46 C80 34 76 28 60 28 C44 28 40 34 38 46 Z" fill="#18181b"/>
+    <circle cx="51" cy="48" r="2.5" fill="#18181b"/>
+    <circle cx="69" cy="48" r="2.5" fill="#18181b"/>
+    <path d="M52 62 Q60 68 68 62" fill="none" stroke="#451a03" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Dashboard — VoteSecure</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Voter Sidebar (Section 27) -->
+    <aside class="sidebar" aria-label="Voter Navigation">
+      <div class="sidebar-header">
+        <a href="voter-dashboard.html" class="sidebar-brand">
+          <img src="../assets/images/logo.svg" alt="VoteSecure Logo" style="height: 32px; filter: brightness(0) invert(1);">
+        </a>
+        <span class="sidebar-role-badge" style="background-color: var(--accent); color: var(--white);">Voter</span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-heading">Navigation</div>
+        <a href="voter-dashboard.html" class="nav-item active">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+          <span>Dashboard</span>
+        </a>
+        <a href="voting.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          <span>Active Election</span>
+        </a>
+        <a href="profile.html#history" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+          <span>My Voting Status</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="user-avatar" style="background-color: var(--accent);">VT</div>
+          <div class="user-info">
+            <div class="user-info-name user-display-name">Student Voter</div>
+            <div class="user-info-sub user-display-id">VOTER001</div>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-danger" data-action="logout" title="Sign Out" style="padding: 0.25rem 0.5rem;">
+            ⏻
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+          </button>
+          <h1 class="topbar-title">Voter Dashboard</h1>
+        </div>
+        <div class="topbar-right">
+          <span style="font-size: 0.9rem; color: var(--slate-600);">
+            Logged in: <strong class="user-display-name">Rahul Kumar</strong> (<span class="user-display-id" style="font-family: var(--font-mono);">VOTER001</span>)
+          </span>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- Hero Welcome Banner (Section 15 format) -->
+        <div class="card" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: var(--white); margin-bottom: 2rem; border: none; box-shadow: var(--shadow-lg);">
+          <div class="card-body" style="padding: 2.25rem 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+              <div>
+                <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: var(--white); border: none; margin-bottom: 0.75rem;">
+                  Official Collegiate Ballot System
+                </span>
+                <h2 style="color: var(--white); font-size: 2.1rem; margin-bottom: 0.75rem; font-weight: 800;" id="voter-welcome-heading">
+                  Welcome, Rahul Kumar
+                </h2>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 1rem; color: rgba(255, 255, 255, 0.9);">
+                  <div>User ID: <strong id="voter-display-userid" style="font-family: var(--font-mono); color: #93c5fd;">VOTER001</strong></div>
+                  <div>Department: <strong id="voter-info-department">Computer Science</strong></div>
+                  <div>Current Election: <strong id="voter-current-election-name">College Student Council Election 2026</strong></div>
+                  <div style="margin-top: 0.35rem;">
+                    Status: <span id="voter-status-indicator" style="font-weight: 700; color: #86efac;">🟢 Voting Open</span>
+                  </div>
+                </div>
+              </div>
+
+              <div id="voter-hero-action-container">
+                <a href="voting.html" class="btn btn-accent btn-lg" id="btn-hero-vote-now" style="font-size: 1.15rem; padding: 0.9rem 1.75rem; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);">
+                  <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  Vote Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Quick Stats Cards -->
+        <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 2rem;">
+          <div class="stat-card">
+            <div class="stat-info">
+              <span class="stat-label">Active Elections</span>
+              <span class="stat-value" id="metric-active-elections-count">1</span>
+              <span class="stat-sub">Available ballot campaigns</span>
+            </div>
+            <div class="stat-icon stat-icon-blue">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <span class="stat-label">My Ballots Submitted</span>
+              <span class="stat-value" id="metric-participated-count">0</span>
+              <span class="stat-sub">Recorded in ledger</span>
+            </div>
+            <div class="stat-icon stat-icon-green">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-info">
+              <span class="stat-label">Security &amp; Integrity</span>
+              <span class="stat-value" style="font-size: 1.25rem; color: var(--accent);">One Vote / User</span>
+              <span class="stat-sub">Cryptographic receipt issued</span>
+            </div>
+            <div class="stat-icon stat-icon-purple">
+              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Available Elections Section -->
+        <div style="margin-bottom: 1.5rem;">
+          <h3 style="font-size: 1.35rem; color: var(--slate-900); margin-bottom: 0.35rem;">Elections &amp; Ballots</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1.25rem;">
+            Select an active election to review the nominated candidates and submit your confidential ballot.
+          </p>
+        </div>
+
+        <div id="available-elections-container">
+          <!-- Populated by voter.js -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/voter.js"></script>
+</body>
+</html>

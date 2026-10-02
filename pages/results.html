@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Election Results — VoteSecure</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="app-sidebar" aria-label="Navigation">
+      <div class="sidebar-header">
+        <a href="admin-dashboard.html" class="sidebar-brand" id="brand-dashboard-link">
+          <img src="../assets/images/logo.svg" alt="VoteSecure Logo" style="height: 32px; filter: brightness(0) invert(1);">
+        </a>
+        <span class="sidebar-role-badge" id="sidebar-role-badge">Admin</span>
+      </div>
+
+      <!-- Navigation dynamically populated for Admin vs Voter -->
+      <nav class="sidebar-nav" id="sidebar-nav-container">
+        <!-- Rendered by results.js -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="user-avatar" id="footer-user-avatar">AD</div>
+          <div class="user-info">
+            <div class="user-info-name user-display-name">Active User</div>
+            <div class="user-info-sub" id="footer-user-role">Administrator</div>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-danger" data-action="logout" title="Sign Out" style="padding: 0.25rem 0.5rem;">
+            ⏻
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+          </button>
+          <h1 class="topbar-title">Election Results</h1>
+        </div>
+
+        <div class="topbar-right">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <label for="results-election-selector" style="font-size: 0.85rem; font-weight: 600; color: var(--slate-600); margin: 0;">Election:</label>
+            <select id="results-election-selector" class="form-control" style="width: auto; font-weight: 600;">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content" id="results-main-content">
+        <!-- Restricted Access Notice (if voter and public results disabled) -->
+        <div id="results-restricted-container" style="display: none;">
+          <div class="card text-center" style="max-width: 620px; margin: 3rem auto; padding: 3rem 2rem;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--warning-subtle); color: #92400e; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <svg width="36" height="36" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Results Are Restricted</h2>
+            <p style="color: var(--slate-600); line-height: 1.6; margin-bottom: 1.5rem;">
+              Election results are currently restricted by the administrator. Only authorized officials may review tallies until public results are published.
+            </p>
+            <a href="voter-dashboard.html" class="btn btn-primary" style="margin: 0 auto;">Return to Voter Dashboard</a>
+          </div>
+        </div>
+
+        <!-- Authorized Results View -->
+        <div id="results-authorized-view">
+          <!-- Election Summary & Overall Statistics (Section 22) -->
+          <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-header">
+              <div>
+                <h2 style="font-size: 1.35rem; color: var(--slate-900); margin: 0 0 0.25rem;" id="results-election-name">Election Summary</h2>
+                <span style="font-size: 0.85rem; color: var(--slate-500);">Live tally computed dynamically from ballot ledger</span>
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="location.reload();">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+                Refresh Tallies
+              </button>
+            </div>
+
+            <div class="card-body">
+              <!-- 5 Overall Statistics Cards (Section 22) -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                <!-- 1. Total Registered Voters -->
+                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem;">
+                  <div style="font-size: 0.75rem; color: var(--slate-500); text-transform: uppercase; font-weight: 700;">Total Registered Voters</div>
+                  <div style="font-size: 1.65rem; font-weight: 800; color: var(--slate-900); margin: 0.25rem 0;" id="results-total-voters">0</div>
+                  <div style="font-size: 0.75rem; color: var(--slate-500);" id="results-active-sub">0 Active Eligible</div>
+                </div>
+
+                <!-- 2. Total Votes Cast -->
+                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem;">
+                  <div style="font-size: 0.75rem; color: var(--slate-500); text-transform: uppercase; font-weight: 700;">Total Votes Cast</div>
+                  <div style="font-size: 1.65rem; font-weight: 800; color: var(--accent); margin: 0.25rem 0;" id="results-votes-cast">0</div>
+                  <div style="font-size: 0.75rem; color: var(--slate-500);">Verified sealed ballots</div>
+                </div>
+
+                <!-- 3. Total Voters Who Have Not Voted -->
+                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem;">
+                  <div style="font-size: 0.75rem; color: var(--slate-500); text-transform: uppercase; font-weight: 700;">Not Voted Yet</div>
+                  <div style="font-size: 1.65rem; font-weight: 800; color: var(--slate-700); margin: 0.25rem 0;" id="results-not-voted">0</div>
+                  <div style="font-size: 0.75rem; color: var(--slate-500);">Pending eligible voters</div>
+                </div>
+
+                <!-- 4. Participation Percentage -->
+                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem;">
+                  <div style="font-size: 0.75rem; color: var(--slate-500); text-transform: uppercase; font-weight: 700;">Participation %</div>
+                  <div style="font-size: 1.65rem; font-weight: 800; color: var(--primary); margin: 0.25rem 0;" id="results-participation-pct">0%</div>
+                  <div style="font-size: 0.75rem; color: var(--slate-500);">Official turnout rate</div>
+                </div>
+
+                <!-- 5. Election Status -->
+                <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem;">
+                  <div style="font-size: 0.75rem; color: var(--slate-500); text-transform: uppercase; font-weight: 700;">Election Status</div>
+                  <div style="font-size: 1.4rem; font-weight: 800; margin: 0.35rem 0;" id="results-election-status-display">Active</div>
+                  <div style="font-size: 0.75rem; color: var(--slate-500);" id="results-schedule-sub">Live election</div>
+                </div>
+              </div>
+
+              <!-- Overall Turnout Progress Bar -->
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--slate-600); margin-bottom: 0.35rem;">
+                  <span>Voter Participation Progress</span>
+                  <span id="results-turnout-label">0% Turnout</span>
+                </div>
+                <div class="progress-bar-container" style="height: 10px;">
+                  <div class="progress-bar-fill" id="results-turnout-bar" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 23 & 24: Post-Wise Results & Dynamic Visualization -->
+          <div id="results-posts-container">
+            <!-- Dynamically populated by results.js -->
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/results.js"></script>
+</body>
+</html>

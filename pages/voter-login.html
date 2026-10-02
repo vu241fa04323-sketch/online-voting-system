@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Login — VoteSecure</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="auth-page">
+
+  <!-- Header -->
+  <header class="auth-header">
+    <a href="../index.html" class="brand-link">
+      <img src="../assets/images/logo.svg" alt="VoteSecure Logo" style="height: 36px;">
+    </a>
+    <a href="../index.html" class="btn btn-secondary btn-sm">
+      &larr; Back to Home
+    </a>
+  </header>
+
+  <!-- Login Card Container -->
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <span class="auth-badge auth-badge-voter">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+          </svg>
+          Voter Authentication Portal
+        </span>
+        <h1 class="auth-title">Voter Login</h1>
+        <p class="auth-subtitle">Enter your official credentials issued by the administrator.</p>
+      </div>
+
+      <div class="auth-card-body">
+        <!-- Demo Credentials Box -->
+        <div class="demo-credentials-box">
+          <div class="demo-credentials-header">
+            <span class="demo-tag">
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+              Demo Voter Accounts
+            </span>
+            <div style="display: flex; gap: 0.35rem;">
+              <button type="button" class="demo-autofill-btn" id="autofill-voter1-btn" title="VOTER001: Rahul Kumar">
+                VOTER001 &rarr;
+              </button>
+              <button type="button" class="demo-autofill-btn" id="autofill-voter2-btn" title="VOTER002: Priya Sharma">
+                VOTER002 &rarr;
+              </button>
+            </div>
+          </div>
+          <div class="demo-credentials-list">
+            <div>User ID: <strong>VOTER001</strong> | Password: <strong>voter123</strong> (Rahul Kumar)</div>
+            <div>User ID: <strong>VOTER002</strong> | Password: <strong>voter456</strong> (Priya Sharma)</div>
+            <div>User ID: <strong>VOTER003</strong> | Password: <strong>voter789</strong> (Arjun Rao)</div>
+          </div>
+        </div>
+
+        <!-- Login Form -->
+        <form id="voter-login-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="voter-id">User ID <span class="required">*</span></label>
+            <input type="text" id="voter-id" class="form-control" placeholder="Enter your User ID (e.g. VOTER001)" required autocomplete="username">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="voter-password">Password <span class="required">*</span></label>
+            <div class="password-input-group">
+              <input type="password" id="voter-password" class="form-control" placeholder="Enter your password" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" id="toggle-voter-pass" aria-label="Toggle password visibility">
+                👁
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-accent btn-block btn-lg" style="margin-top: 1.25rem;">
+            Login
+          </button>
+        </form>
+
+        <!-- Administrator Notice (Section 2 & 6 Requirement) -->
+        <div style="margin-top: 1.5rem; padding: 1rem; background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); text-align: center;">
+          <p style="margin: 0; font-size: 0.88rem; color: var(--slate-600); line-height: 1.5;">
+            <strong>Don't have your login credentials?</strong><br>
+            Please contact the administrator to receive your User ID and password.
+          </p>
+        </div>
+      </div>
+
+      <div class="auth-card-footer">
+        Are you an administrator? <a href="admin-login.html" class="font-semibold">Switch to Admin Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // If already logged in as voter, redirect
+      const user = Auth.getCurrentUser();
+      if (user && user.role === 'voter') {
+        window.location.href = 'voter-dashboard.html';
+        return;
+      }
+
+      const form = document.getElementById('voter-login-form');
+      const voterIdInput = document.getElementById('voter-id');
+      const passwordInput = document.getElementById('voter-password');
+      const autofillVoter1 = document.getElementById('autofill-voter1-btn');
+      const autofillVoter2 = document.getElementById('autofill-voter2-btn');
+      const togglePassBtn = document.getElementById('toggle-voter-pass');
+
+      // Autofills
+      if (autofillVoter1) {
+        autofillVoter1.addEventListener('click', () => {
+          voterIdInput.value = 'VOTER001';
+          passwordInput.value = 'voter123';
+          Utils.showToast('Filled credentials for VOTER001 (Rahul Kumar).', 'info');
+        });
+      }
+
+      if (autofillVoter2) {
+        autofillVoter2.addEventListener('click', () => {
+          voterIdInput.value = 'VOTER002';
+          passwordInput.value = 'voter456';
+          Utils.showToast('Filled credentials for VOTER002 (Priya Sharma).', 'info');
+        });
+      }
+
+      // Password toggle
+      if (togglePassBtn) {
+        togglePassBtn.addEventListener('click', () => {
+          const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+          passwordInput.setAttribute('type', type);
+          togglePassBtn.textContent = type === 'password' ? '👁' : '🙈';
+        });
+      }
+
+      // Handle Submit
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const voterId = voterIdInput.value.trim();
+        const password = passwordInput.value;
+
+        if (!voterId) {
+          Utils.showToast('Please enter your User ID.', 'error');
+          voterIdInput.focus();
+          return;
+        }
+
+        if (!password) {
+          Utils.showToast('Please enter your password.', 'error');
+          passwordInput.focus();
+          return;
+        }
+
+        const result = Auth.loginVoter(voterId, password);
+        if (result.success) {
+          Utils.showToast(`Welcome, ${result.user.name}!`, 'success');
+          setTimeout(() => {
+            window.location.href = 'voter-dashboard.html';
+          }, 600);
+        } else {
+          Utils.showToast(result.message, 'error');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

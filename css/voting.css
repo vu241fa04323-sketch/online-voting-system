@@ -1,0 +1,380 @@
+/**
+ * VoteSecure - Voting Experience Stylesheet
+ * Candidate selection cards, post sections, review summaries, and digital confirmation receipt.
+ */
+
+.voting-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.voting-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.voting-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  background-color: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.voting-title {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.voting-desc {
+  font-size: 1.05rem;
+  color: var(--slate-600);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Post Container Section */
+.post-section {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--slate-200);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.post-header {
+  padding: 1.5rem 2rem;
+  background: linear-gradient(180deg, var(--white) 0%, var(--slate-50) 100%);
+  border-bottom: 1px solid var(--slate-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.post-number-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.post-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+.post-requirement-tag {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  font-weight: 500;
+}
+
+.candidates-voting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+  padding: 1.75rem;
+}
+
+/* Candidate Card in Voting Mode */
+.candidate-vote-card {
+  position: relative;
+  background-color: var(--white);
+  border: 2px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candidate-vote-card:hover {
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.candidate-vote-card.selected {
+  border-color: var(--accent);
+  background-color: #f0fdf4;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.candidate-vote-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.candidate-vote-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin-bottom: 0.5rem;
+}
+
+.candidate-vote-symbol {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.candidate-vote-symbol img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.candidate-vote-symbol span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--slate-700);
+}
+
+.candidate-vote-manifesto {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+/* Custom Radio Indicator */
+.vote-radio-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--slate-100);
+  color: var(--slate-600);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.vote-radio-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--slate-400);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.candidate-vote-card.selected .vote-radio-indicator {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.candidate-vote-card.selected .vote-radio-circle {
+  border-color: var(--white);
+  background-color: var(--white);
+}
+
+.candidate-vote-card.selected .vote-radio-circle::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+/* Voting Bottom Bar */
+.voting-actions-bar {
+  background-color: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  bottom: 1.5rem;
+  z-index: 30;
+}
+
+/* Review Vote Modal Styles */
+.review-selection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.review-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background-color: var(--slate-50);
+  border: 1px solid var(--slate-200);
+}
+
+.review-post-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  margin-bottom: 0.2rem;
+}
+
+.review-candidate-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--slate-900);
+}
+
+.review-symbol-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate-700);
+}
+
+.review-symbol-chip img {
+  width: 28px;
+  height: 28px;
+}
+
+.review-warning-box {
+  background-color: var(--warning-subtle);
+  border-left: 4px solid var(--warning);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+/* Confirmation Receipt Ticket */
+.receipt-card {
+  max-width: 540px;
+  margin: 2rem auto;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--slate-300);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.receipt-header {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 2.25rem 1.5rem 1.75rem;
+}
+
+.receipt-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.receipt-success-icon svg {
+  width: 36px;
+  height: 36px;
+  color: var(--white);
+}
+
+.receipt-header h2 {
+  color: var(--white);
+  font-size: 1.75rem;
+  margin-bottom: 0.4rem;
+}
+
+.receipt-code-box {
+  background-color: var(--slate-900);
+  color: #38bdf8;
+  padding: 0.85rem 1.25rem;
+  margin: 1.5rem auto 0.5rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.receipt-body {
+  padding: 2rem;
+}
+
+.receipt-details-table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  border-collapse: collapse;
+}
+
+.receipt-details-table td {
+  padding: 0.65rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--slate-100);
+}
+
+.receipt-details-table td:first-child {
+  color: var(--slate-500);
+  font-weight: 500;
+  width: 40%;
+}
+
+.receipt-details-table td:last-child {
+  color: var(--slate-900);
+  font-weight: 600;
+  text-align: right;
+}
+
+.receipt-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}

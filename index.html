@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoteSecure — Online Voting Management System</title>
+  <meta name="description" content="A professional digital voting platform for managing elections, voters, candidates, and dynamic results.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="VoteSecure Homepage">
+        <img src="assets/images/logo.svg" alt="VoteSecure Logo" class="brand-logo">
+      </a>
+
+      <!-- Desktop & Mobile Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="pages/voter-login.html" class="nav-link" style="color: var(--accent); font-weight: 600;">Voter Portal</a></li>
+          <li><a href="pages/admin-login.html" class="nav-link" style="color: var(--primary); font-weight: 600;">Admin Portal</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="pages/voter-login.html" class="btn btn-secondary btn-sm">Voter Login</a>
+        <a href="pages/admin-login.html" class="btn btn-primary btn-sm">Admin Login</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <main>
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          Institutions &bull; Student Councils &bull; Organizations
+        </div>
+
+        <h1 class="hero-title">Online Voting System</h1>
+        <p class="hero-subtitle">
+          <strong>Secure. Simple. Digital Voting.</strong> An easy-to-use digital voting platform for managing elections, voters, candidates and results.
+        </p>
+
+        <div class="hero-cta">
+          <a href="pages/voter-login.html" class="btn btn-accent btn-lg">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+            </svg>
+            Voter Login
+          </a>
+          <a href="pages/admin-login.html" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"/>
+            </svg>
+            Admin Login
+          </a>
+        </div>
+
+        <!-- Interactive Preview Mockup Card -->
+        <div class="hero-mockup-card">
+          <div class="mockup-header">
+            <span class="mockup-dot red"></span>
+            <span class="mockup-dot yellow"></span>
+            <span class="mockup-dot green"></span>
+            <span style="font-size: 0.75rem; color: var(--slate-500); margin-left: 0.5rem; font-family: var(--font-mono);">
+              votesecure-app / live-election-console
+            </span>
+          </div>
+          <div class="mockup-body">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--slate-100);">
+              <div>
+                <span class="badge badge-success">
+                  <span class="badge-dot"></span> Live Election
+                </span>
+                <h3 style="font-size: 1.25rem; margin-top: 0.35rem; color: var(--slate-900);">College Student Council Election 2026</h3>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-size: 0.8rem; color: var(--slate-500);">Participation Turnout</div>
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--accent);">Active &amp; Recording</div>
+              </div>
+            </div>
+
+            <!-- Demo candidate row showcase -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+              <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                <img src="assets/symbols/torch.svg" style="width: 32px; height: 32px;" alt="Torch">
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--slate-500); text-transform: uppercase;">Presidential Race</div>
+                  <div style="font-size: 0.95rem; font-weight: 700; color: var(--slate-800);">Sarah Jenkins</div>
+                </div>
+              </div>
+              <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                <img src="assets/symbols/sun.svg" style="width: 32px; height: 32px;" alt="Sun">
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--slate-500); text-transform: uppercase;">Presidential Race</div>
+                  <div style="font-size: 0.95rem; font-weight: 700; color: var(--slate-800);">Ryan Reynolds</div>
+                </div>
+              </div>
+              <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-sm); padding: 1rem; display: flex; align-items: center; gap: 0.75rem;">
+                <img src="assets/symbols/star.svg" style="width: 32px; height: 32px;" alt="Star">
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--slate-500); text-transform: uppercase;">Vice President</div>
+                  <div style="font-size: 0.95rem; font-weight: 700; color: var(--slate-800);">Jessica Taylor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Core Capabilities</div>
+          <h2 class="section-title">Engineered for Clean Elections</h2>
+          <p>Everything needed to run democratic ballots with complete transparency, candidate management, and immediate verifiable results.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- 1. Easy Voting -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper feature-icon-green">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Easy Voting</h3>
+            <p class="feature-desc">Intuitive, step-by-step electronic ballot with one-click single candidate selection per post, vote review modal, and tamper-resistant confirmation receipts.</p>
+          </div>
+
+          <!-- 2. Candidate Management -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper feature-icon-blue">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Candidate Management</h3>
+            <p class="feature-desc">Register candidates, upload campaign portraits, assign electoral symbols, link to specific executive posts, and publish policy manifestos.</p>
+          </div>
+
+          <!-- 3. Admin Control -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper feature-icon-purple">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Admin Control</h3>
+            <p class="feature-desc">Full administrator control over voter accounts, electoral positions, candidate approvals, start/stop election lifecycle, and security policies.</p>
+          </div>
+
+          <!-- 4. Live Results -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper feature-icon-teal">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Live Results</h3>
+            <p class="feature-desc">Instant dynamic vote calculation, animated pure CSS bar charts, winner badges, turnout ratios, and one-click CSV &amp; print audit reports.</p>
+          </div>
+
+          <!-- 5. Mobile Friendly -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper feature-icon-rose">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm2 1v6h10V6H5z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Mobile Friendly</h3>
+            <p class="feature-desc">Fluid desktop, tablet, and mobile layouts engineered with semantic HTML5, pure CSS3 media queries, touch-friendly inputs, and collapsible navigation.</p>
+          </div>
+
+          <!-- 6. Tamper Resistant -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper feature-icon-amber">
+              <svg viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Tamper Resistant</h3>
+            <p class="feature-desc">Strict duplicate vote prevention ensuring every eligible voter casts exactly one ballot. Unique cryptographic reference codes generated upon submission.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Academic Disclaimer Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">About VoteSecure</div>
+          <h2 class="section-title">Designed for Modern Institutional Governance</h2>
+          <p>
+            VoteSecure is built as an educational and institutional software demonstration for collegiate councils, 
+            academic departments, and community associations seeking transparent ballot management.
+          </p>
+        </div>
+
+        <div class="educational-notice">
+          <svg class="notice-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+          </svg>
+          <div>
+            <h4 style="color: var(--primary); margin-bottom: 0.35rem; font-size: 1.05rem;">Educational Prototype Architecture Notice</h4>
+            <p style="font-size: 0.9rem; color: var(--slate-700); line-height: 1.6; margin: 0;">
+              This web project demonstrates mastery of beginner-friendly web standards: semantic HTML5, modern CSS3 layout techniques, 
+              vanilla JavaScript DOM manipulation, and browser LocalStorage state management. 
+              <strong>Please note:</strong> LocalStorage persistence and browser-side authentication are utilized for educational simulation. 
+              A production election system requires an audited backend server, cryptographic hashing, relational database isolation, 
+              and server-enforced access controls.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container" style="max-width: 760px;">
+        <div class="section-header">
+          <div class="section-tag">Get in Touch</div>
+          <h2 class="section-title">Need Support or Have Questions?</h2>
+          <p>Contact the election administration committee or technical support team.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <form onsubmit="event.preventDefault(); Utils.showToast('Thank you! Your message has been received.', 'success'); this.reset();">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Your Full Name <span class="required">*</span></label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">University / Official Email <span class="required">*</span></label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="e.g. j.doe@university.edu" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Inquiry Subject <span class="required">*</span></label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Voter Registration Inquiry" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message <span class="required">*</span></label>
+                <textarea id="contact-message" class="form-control" rows="4" placeholder="How can we assist you with the upcoming election?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>VoteSecure</h3>
+          <p>Institutional digital voting management platform designed for collegiate student councils, departmental elections, and academic governance.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#features" class="footer-link">Features</a></li>
+            <li><a href="#about" class="footer-link">About Project</a></li>
+            <li><a href="#contact" class="footer-link">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Portals</h4>
+          <ul class="footer-links-list">
+            <li><a href="pages/voter-login.html" class="footer-link">Voter Login</a></li>
+            <li><a href="pages/admin-login.html" class="footer-link">Admin Login</a></li>
+            <li><a href="pages/results.html" class="footer-link">Election Results</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Technology</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link">Semantic HTML5</li>
+            <li class="footer-link">Pure CSS3</li>
+            <li class="footer-link">Vanilla JavaScript</li>
+            <li class="footer-link">Browser LocalStorage</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 VoteSecure. All rights reserved. Built for academic demonstration.</div>
+        <div style="color: var(--slate-500);">Version 1.0.0 &bull; Vanilla Web Project</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

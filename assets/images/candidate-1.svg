@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="60" cy="60" r="56"/>
+    </clipPath>
+    <linearGradient id="bgGrad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#bfdbfe"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bgGrad1)" stroke="#3b82f6" stroke-width="3"/>
+  <g clip-path="url(#circleClip)">
+    <!-- Shoulders -->
+    <path d="M20 120 C20 90 40 85 60 85 C80 85 100 90 100 120 Z" fill="#1e40af"/>
+    <path d="M42 85 L60 105 L78 85 Z" fill="#ffffff"/>
+    <!-- Head -->
+    <circle cx="60" cy="52" r="22" fill="#fcd34d"/>
+    <!-- Hair Female -->
+    <path d="M36 50 C36 30 46 22 60 22 C74 22 84 30 84 50 C84 62 82 72 80 76 C74 76 74 60 74 54 C74 46 70 38 60 38 C50 38 46 46 46 54 C46 60 46 76 40 76 C38 72 36 62 36 50 Z" fill="#92400e"/>
+    <!-- Glasses -->
+    <rect x="44" y="48" width="12" height="9" rx="2" fill="none" stroke="#1e293b" stroke-width="2"/>
+    <rect x="64" y="48" width="12" height="9" rx="2" fill="none" stroke="#1e293b" stroke-width="2"/>
+    <line x1="56" y1="52" x2="64" y2="52" stroke="#1e293b" stroke-width="2"/>
+    <!-- Smile -->
+    <path d="M52 64 Q60 70 68 64" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

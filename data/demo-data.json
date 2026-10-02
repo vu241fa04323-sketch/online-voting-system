@@ -1,0 +1,278 @@
+{
+  "admin": {
+    "username": "admin",
+    "password": "Admin@123",
+    "name": "System Administrator",
+    "email": "admin@votesecure.edu",
+    "role": "admin"
+  },
+  "voters": [
+    {
+      "id": "VOTER001",
+      "userId": "VOTER001",
+      "password": "voter123",
+      "fullName": "Rahul Kumar",
+      "name": "Rahul Kumar",
+      "dateOfBirth": "2005-05-15",
+      "gender": "Male",
+      "email": "rahul@example.com",
+      "phone": "9876543210",
+      "address": "Room 304, Boys Hostel Block A, University Campus",
+      "studentId": "STU2026001",
+      "department": "Computer Science",
+      "year": "3rd Year",
+      "section": "A",
+      "status": "Active",
+      "createdAt": "2026-09-20T10:00:00.000Z"
+    },
+    {
+      "id": "VOTER002",
+      "userId": "VOTER002",
+      "password": "voter456",
+      "fullName": "Priya Sharma",
+      "name": "Priya Sharma",
+      "dateOfBirth": "2005-08-22",
+      "gender": "Female",
+      "email": "priya.sharma@example.com",
+      "phone": "9876543211",
+      "address": "Flat 12B, Emerald Towers, Tech Park Road",
+      "studentId": "STU2026002",
+      "department": "Information Technology",
+      "year": "3rd Year",
+      "section": "B",
+      "status": "Active",
+      "createdAt": "2026-09-21T11:00:00.000Z"
+    },
+    {
+      "id": "VOTER003",
+      "userId": "VOTER003",
+      "password": "voter789",
+      "fullName": "Arjun Rao",
+      "name": "Arjun Rao",
+      "dateOfBirth": "2004-11-10",
+      "gender": "Male",
+      "email": "arjun.rao@example.com",
+      "phone": "9876543212",
+      "address": "45 Lakeview Avenue, Green Park",
+      "studentId": "STU2026003",
+      "department": "Electronics & Communication",
+      "year": "4th Year",
+      "section": "A",
+      "status": "Active",
+      "createdAt": "2026-09-22T09:30:00.000Z"
+    },
+    {
+      "id": "VOTER004",
+      "userId": "VOTER004",
+      "password": "voter101",
+      "fullName": "Sneha Patel",
+      "name": "Sneha Patel",
+      "dateOfBirth": "2005-02-18",
+      "gender": "Female",
+      "email": "sneha.patel@example.com",
+      "phone": "9876543213",
+      "address": "Room 102, Girls Hostel Block C",
+      "studentId": "STU2026004",
+      "department": "Computer Science",
+      "year": "3rd Year",
+      "section": "B",
+      "status": "Active",
+      "createdAt": "2026-09-23T14:15:00.000Z"
+    },
+    {
+      "id": "VOTER005",
+      "userId": "VOTER005",
+      "password": "voter202",
+      "fullName": "Karthik Verma",
+      "name": "Karthik Verma",
+      "dateOfBirth": "2004-07-09",
+      "gender": "Male",
+      "email": "karthik.v@example.com",
+      "phone": "9876543214",
+      "address": "88 North Extension, Near Central Station",
+      "studentId": "STU2026005",
+      "department": "Mechanical Engineering",
+      "year": "4th Year",
+      "section": "A",
+      "status": "Inactive",
+      "createdAt": "2026-09-24T16:00:00.000Z"
+    }
+  ],
+  "elections": [
+    {
+      "id": "ELECTION001",
+      "name": "College Student Council Election 2026",
+      "title": "College Student Council Election 2026",
+      "description": "Annual university-wide election for student government executive leadership positions for the academic year 2026-2027.",
+      "startDate": "2026-10-01",
+      "startTime": "09:00",
+      "endDate": "2026-10-15",
+      "endTime": "17:00",
+      "status": "Active",
+      "createdAt": "2026-09-28T08:00:00.000Z"
+    },
+    {
+      "id": "ELECTION002",
+      "name": "Engineering Department Representative Election 2026",
+      "title": "Engineering Department Representative Election 2026",
+      "description": "Electing academic faculty and departmental representatives to the university student senate board.",
+      "startDate": "2026-11-01",
+      "startTime": "10:00",
+      "endDate": "2026-11-10",
+      "endTime": "16:00",
+      "status": "Upcoming",
+      "createdAt": "2026-09-30T10:00:00.000Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": "POST001",
+      "name": "President",
+      "electionId": "ELECTION001",
+      "order": 1,
+      "description": "Leads the Student Council, represents the student body before university administration, and presides over executive meetings."
+    },
+    {
+      "id": "POST002",
+      "name": "Vice President",
+      "electionId": "ELECTION001",
+      "order": 2,
+      "description": "Assists the President, coordinates council committees, and manages campus student organizations."
+    },
+    {
+      "id": "POST003",
+      "name": "Secretary",
+      "electionId": "ELECTION001",
+      "order": 3,
+      "description": "Maintains council records, issues official communications, and records meeting minutes."
+    },
+    {
+      "id": "POST004",
+      "name": "Joint Secretary",
+      "electionId": "ELECTION001",
+      "order": 4,
+      "description": "Coordinates academic club operations and inter-departmental communications."
+    },
+    {
+      "id": "POST005",
+      "name": "Treasurer",
+      "electionId": "ELECTION001",
+      "order": 5,
+      "description": "Oversees student council budgeting, activity grants, and annual financial allocations."
+    }
+  ],
+  "candidates": [
+    {
+      "id": "CAND001",
+      "name": "Rahul Kumar",
+      "postId": "POST001",
+      "electionId": "ELECTION001",
+      "symbol": "torch",
+      "symbolName": "Torch of Progress",
+      "symbolPath": "assets/symbols/torch.svg",
+      "photo": "assets/images/candidate-1.svg",
+      "description": "Third-year Computer Science student. Advocating for 24/7 library hours, campus mental health support, and transparent student council budgets.",
+      "department": "Computer Science",
+      "status": "Active"
+    },
+    {
+      "id": "CAND002",
+      "name": "Sarah Jenkins",
+      "postId": "POST001",
+      "electionId": "ELECTION001",
+      "symbol": "sun",
+      "symbolName": "Rising Sun",
+      "symbolPath": "assets/symbols/sun.svg",
+      "photo": "assets/images/candidate-2.svg",
+      "description": "Championing affordable campus meal plans, enhanced sports facilities, and expanded campus shuttle routes.",
+      "department": "Information Technology",
+      "status": "Active"
+    },
+    {
+      "id": "CAND003",
+      "name": "Michael Chang",
+      "postId": "POST001",
+      "electionId": "ELECTION001",
+      "symbol": "book",
+      "symbolName": "Open Book",
+      "symbolPath": "assets/symbols/book.svg",
+      "photo": "assets/images/candidate-3.svg",
+      "description": "Focused on competitive research grants, tech symposium funding, and paid student internship pipelines.",
+      "department": "Computer Science",
+      "status": "Active"
+    },
+    {
+      "id": "CAND004",
+      "name": "Priya Sharma",
+      "postId": "POST002",
+      "electionId": "ELECTION001",
+      "symbol": "star",
+      "symbolName": "Guiding Star",
+      "symbolPath": "assets/symbols/star.svg",
+      "photo": "assets/images/candidate-4.svg",
+      "description": "Committed to diverse cultural fests, inclusive student representation, and peer-to-peer mentoring programs.",
+      "department": "Information Technology",
+      "status": "Active"
+    },
+    {
+      "id": "CAND005",
+      "name": "Kevin Patel",
+      "postId": "POST002",
+      "electionId": "ELECTION001",
+      "symbol": "shield",
+      "symbolName": "Shield of Integrity",
+      "symbolPath": "assets/symbols/shield.svg",
+      "photo": "assets/images/candidate-5.svg",
+      "description": "Focusing on campus lighting, night safety escorts, green sustainability, and zero single-use plastic initiatives.",
+      "department": "Mechanical Engineering",
+      "status": "Active"
+    },
+    {
+      "id": "CAND006",
+      "name": "Arjun Rao",
+      "postId": "POST003",
+      "electionId": "ELECTION001",
+      "symbol": "pen",
+      "symbolName": "Quill of Governance",
+      "symbolPath": "assets/symbols/pen.svg",
+      "photo": "assets/images/candidate-6.svg",
+      "description": "Ensuring open-access council minutes, digital student grievance portal, and monthly town hall Q&A sessions.",
+      "department": "Electronics & Communication",
+      "status": "Active"
+    },
+    {
+      "id": "CAND007",
+      "name": "Emily Davis",
+      "postId": "POST003",
+      "electionId": "ELECTION001",
+      "symbol": "compass",
+      "symbolName": "Compass of Direction",
+      "symbolPath": "assets/symbols/compass.svg",
+      "photo": "assets/images/candidate-7.svg",
+      "description": "Modernizing student club registrations, automated event calendars, and career development workshops.",
+      "department": "Computer Science",
+      "status": "Active"
+    }
+  ],
+  "votes": [],
+  "settings": {
+    "allowPublicResults": true,
+    "systemTitle": "VoteSecure Online Voting System"
+  },
+  "logs": [
+    {
+      "id": "LOG001",
+      "timestamp": "2026-10-01T08:00:00.000Z",
+      "action": "Election Initialized",
+      "detail": "College Student Council Election 2026 set to Active status.",
+      "user": "admin"
+    },
+    {
+      "id": "LOG002",
+      "timestamp": "2026-10-01T08:30:00.000Z",
+      "action": "Candidates Registered",
+      "detail": "7 candidates registered across President, Vice President, and Secretary posts.",
+      "user": "admin"
+    }
+  ]
+}

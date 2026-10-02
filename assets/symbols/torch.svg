@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="flameGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <linearGradient id="handleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="50%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+  </defs>
+  <!-- Flame -->
+  <path d="M50 10 C55 25 70 30 65 50 C62 58 55 60 50 62 C45 60 38 58 35 50 C30 30 45 25 50 10 Z" fill="url(#flameGrad)" />
+  <path d="M50 25 C52 35 60 38 58 48 C56 52 52 54 50 55 C48 54 44 52 42 48 C40 38 48 35 50 25 Z" fill="#ffffff" opacity="0.8" />
+  <!-- Torch bowl -->
+  <path d="M32 58 L68 58 L62 70 L38 70 Z" fill="#d97706" stroke="#92400e" stroke-width="2"/>
+  <rect x="36" y="68" width="28" height="6" rx="2" fill="#b45309"/>
+  <!-- Handle -->
+  <path d="M42 74 L44 94 L56 94 L58 74 Z" fill="url(#handleGrad)"/>
+</svg>
